@@ -15,6 +15,11 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to ScholFi API' });
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 
